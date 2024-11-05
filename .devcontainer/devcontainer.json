@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php
+{
+	"name": "PHP 8.2 weather-api",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+  
+	// Configure tool-specific properties.
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "onecentlin.laravel-blade",
+		  "mhutchie.git-graph",
+		  "christian-kohler.path-intellisense",
+		  "ritwickdey.LiveServer",
+		  "VisualStudioExptTeam.intellicode-api-usage-examples",
+		  "VisualStudioExptTeam.vscodeintellicode",
+		  "eamodio.gitlens",
+		  "github.vscode-github-actions",
+		  "cweijan.vscode-database-client2",
+		  "cweijan.dbclient-jdbc",
+		  "esbenp.prettier-vscode",
+		  "devsense.phptools-vscode"
+		],
+		"settings": {
+			"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+		}
+		
+	  }
+	},
+  
+	"forwardPorts": [8080],
+	"features": {
+	  "ghcr.io/devcontainers/features/git:1": {
+		"ppa": true,
+		"version": "os-provided"
+	  },
+	  "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {}
+	},
+  
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "chmod +x ./install.sh ; ./install.sh"
+  
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+  }  
