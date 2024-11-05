@@ -3,7 +3,9 @@
 {
 	"name": "PHP 8.2 weather-api",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+	"dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   
 	// Configure tool-specific properties.
 	"customizations": {

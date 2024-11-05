@@ -4,5 +4,9 @@ if ! command --version composer &> /dev/null
         exec /bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
         exec bash
 else
-    exec composer global require laravel/installer
+
+    composer global require laravel/installer
+    var=$(composer global config bin-dir --absolute)
+    echo 'export PATH="$var:$PATH"' >> ~/.bashrc;
+    source ~/.bashrc
 fi

@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  devcontainer:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached      
+    network_mode: service:redis
+    command: sleep infinity
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
